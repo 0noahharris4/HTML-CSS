@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Pittsburgh Steelers Fan Page</title>
+
+	<!-- inline styles (replaces external styles.css) -->
+	<!-- load a professional condensed sans-serif similar to team branding -->
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+	<style>
+	:root{--black:#0b0b0b;--gold:#ffb612;--white:#fff;--muted:#9aa0a6;--radius:10px}
+	*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:var(--black);background:#fff}
+
+	/* Header: use a professional condensed sans-serif and Title Case */
+	.site-header, .brand .title, .nav a{font-family:Oswald, 'Helvetica Neue', Arial, sans-serif}
+	.site-header .container{letter-spacing:0.4px}
+	.brand .title, .nav a{font-weight:600;text-transform:capitalize}
+	.container{max-width:1100px;margin:0 auto;padding:1rem}
+	.site-header{background:linear-gradient(90deg,var(--black),#121212);color:var(--white)}
+	.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem}
+	.brand{display:flex;align-items:center;gap:0.75rem}
+	.badge{display:flex;gap:6px;align-items:center}
+	.dot{width:14px;height:14px;border-radius:50%;display:inline-block;box-shadow:0 1px 0 rgba(0,0,0,0.2)}
+	.gold{background:var(--gold)}.red{background:#d32f2f}.blue{background:#0077c8}
+	.title{font-weight:700;font-size:1.1rem}
+	.nav a{color:var(--white);text-decoration:none;margin-right:1rem}
+	.btn{border:1px solid var(--black);background:transparent;padding:0.5rem 0.75rem;border-radius:6px;cursor:pointer}
+	.btn.primary{background:var(--gold);border:none;color:var(--black);font-weight:600}
+	.btn.small{padding:0.35rem 0.5rem}
+		.hero{padding:4rem 0;background:linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url("images/steelers-field.svg") center/cover no-repeat;color:var(--white)}
+	.hero-inner{display:flex;flex-direction:column;gap:0.5rem}
+	.hero h1{font-size:2.1rem;margin:0}.lead{color:var(--white);margin-bottom:0.75rem}
+	.section{padding:2rem 0}h2{margin:0 0 1rem 0}
+	.games-list{list-style:none;padding:0;margin:0;display:grid;gap:0.75rem}
+	.games-list li{background:#fff;border-radius:8px;padding:0.85rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 6px 18px rgba(3,3,3,0.06)}
+	.grid{display:grid;gap:1rem}
+	.roster-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+	/* player card updates for a professional roster */
+	.player-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:1rem;border-radius:12px;background:var(--gold);border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(3,3,3,0.06)}
+	.player-img{width:140px;height:140px;border-radius:50%;object-fit:cover;margin-bottom:0.75rem;box-shadow:0 6px 18px rgba(3,3,3,0.08);background:var(--black);padding:6px;box-sizing:content-box}
+	.player-name{font-weight:700;margin:0.25rem 0;font-size:1.05rem;color:var(--black)}
+	.player-pos{color:var(--black);margin:0;font-size:0.95rem}
+	.player-number{position:relative;top:-8px;background:var(--black);color:var(--gold);padding:4px 8px;border-radius:999px;font-weight:700;font-size:0.9rem;box-shadow:0 2px 6px rgba(0,0,0,0.08)}
+	.card{background:#fff;border-radius:var(--radius);padding:1rem;text-align:center;box-shadow:0 6px 18px rgba(3,3,3,0.06)}
+	.player-photo{height:84px;width:84px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#ffd36b);display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 0.5rem}
+			.gallery-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+			.media{background:transparent;border-radius:8px;padding:0;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+			.gallery-img{width:100%;height:160px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 6px 18px rgba(3,3,3,0.06);cursor:pointer}
+	.site-footer{background:#fafafa;padding:1rem 0;margin-top:2rem;border-top:1px solid #eee;text-align:center}
+	.muted{color:var(--muted)}.small{font-size:0.85rem}
+	.muted.dark{color:var(--black)}
+	@media (max-width:920px){
+		.site-header .container{flex-direction:column;align-items:flex-start;gap:0.5rem;padding:0.5rem}
+		.nav{width:100%}
+		.nav a{display:none;padding:0.5rem 0;margin-right:0}
+		#nav-toggle{display:inline-block}
+	}
+	@media (max-width:720px){
+		.site-header .container{flex-direction:column;align-items:flex-start;gap:0.25rem;padding:0.5rem}
+		.nav a{display:none}
+		.hero{padding:2rem 0}
+		.hero h1{font-size:1.5rem}
+		.hero-inner{align-items:flex-start}
+		.games-list li{flex-direction:column;align-items:flex-start;gap:0.5rem}
+		.roster-grid{grid-template-columns:1fr}
+		.player-img{width:110px;height:110px}
+		.player-card{padding:0.75rem}
+		.gallery-img{height:110px}
+		.container{padding:0.75rem}
+	}
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<div class="container">
+			<div class="brand">
+				<div class="badge">
+					<span class="dot gold"></span>
+					<span class="dot red"></span>
+					<span class="dot blue"></span>
+				</div>
+				<span class="title">Pittsburgh Steelers</span>
+			</div>
+			<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+				<a href="#roster">roster</a>
+				<a href="#games">schedule</a>
+				<a href="#gallery">media</a>
+				<a href="#tickets">tickets</a>
+				<button class="btn small" id="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="container hero-inner">
+				<h1>Welcome to the Pittsburgh Steelers Fan Page</h1>
+				<p class="lead">Scores, roster highlights, and game day info.</p>
+				<a class="btn primary" href="#games">See Upcoming Games</a>
+			</div>
+		</section>
+
+		<section id="games" class="section container">
+			<h2>Upcoming Games</h2>
+			<ul id="games-list" class="games-list">
+				<!-- JS will populate -->
+			</ul>
+		</section>
+
+		<section id="roster" class="section container">
+				<h2>Roster Highlights</h2>
+				<div class="grid roster-grid">
+					<!-- Replace the src with real player photos (images/players/NAME.jpg) -->
+					<div class="player-card">
+						<img class="player-img" src="images/players/AaronQB.jfif" alt="Aaron Rodgers" onerror="if(this.src.indexOf('images/players/')!==-1){this.src='./AaronQB.jfif';}else{this.onerror=null;this.src='images/players/placeholder.svg';}">
+						<div class="player-number">#8</div>
+						<h3 class="player-name">Aaron Rodgers</h3>
+						<p class="player-pos muted" style="color:var(--black)">Quarterback</p>
+					</div>
+					<div class="player-card">
+						<img class="player-img" src="images/players/JaylenRB.jpg" alt="Player Two" onerror="if(this.src.indexOf('images/players/')!==-1){this.src='./JaylenRB.jpg';}else{this.onerror=null;this.src='images/players/placeholder.svg';}">
+						<div class="player-number">#30</div>
+						<h3 class="player-name">Jaylen Warren</h3>
+						<p class="player-pos muted">Running Back</p>
+					</div>
+					<div class="player-card">
+						<img class="player-img" src="images/players/DKWR.webp" alt="Player Three" onerror="if(this.src.indexOf('images/players/')!==-1){this.src='./DKWR.webp';}else{this.onerror=null;this.src='images/players/placeholder.svg';}">
+						<div class="player-number">#4</div>
+						<h3 class="player-name">DK Metcaf</h3>
+						<p class="player-pos muted">Wide Receiver</p>
+					</div>
+				</div>
+
+			</section>
+
+		<section id="gallery" class="section container">
+			<h2>Gallery</h2>
+			<div class="grid gallery-grid">
+				<div class="media"><img class="gallery-img" src="images/gallery/crowd.jpg" alt="Game day crowd" onerror="if(this.src.indexOf('images/gallery/')!==-1){this.src='./crowd.jpg';}else{this.onerror=null;this.src='images/gallery/placeholder.svg';}"></div>
+				<div class="media"><img class="gallery-img" src="images/gallery/stadium.jfif" alt="Stadium night" onerror="if(this.src.indexOf('images/gallery/')!==-1){this.src='./stadium.jfif';}else{this.onerror=null;this.src='images/gallery/placeholder.svg';}"></div>
+				<div class="media"><img class="gallery-img" src="images/gallery/team.webp" alt="Fan art" onerror="if(this.src.indexOf('images/gallery/')!==-1){this.src='./team.webp';}else{this.onerror=null;this.src='images/gallery/placeholder.svg';}"></div>
+			</div>
+
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>Fan page — Go Steelers!</p>
+			<p class="muted small">This is a fan-made site and not affiliated with the team.</p>
+		</div>
+	</footer>
+
+	<!-- inline script (replaces external script.js) -->
+	<script>
+	document.addEventListener('DOMContentLoaded', ()=> {
+	  const games = [
+		{opponent:'vs Browns', date:'Nov 10', time:'1:00 PM', location:'Heinz Field'},
+		{opponent:'@ Ravens', date:'Nov 24', time:'8:20 PM', location:'M&T Bank Stadium'},
+		{opponent:'vs Bengals', date:'Dec 8', time:'4:25 PM', location:'Heinz Field'}
+	  ];
+
+	  function renderGames() {
+		const list = document.getElementById('games-list');
+		if (!list) return;
+		list.innerHTML = '';
+		games.forEach(g=>{
+		  const li = document.createElement('li');
+		  li.innerHTML = '<div><strong>'+g.opponent+'</strong><div class="muted dark">'+g.location+'</div></div><div class="muted dark">'+g.date+' • '+g.time+'</div>';
+		  list.appendChild(li);
+		});
+	  }
+
+	  const toggle = document.getElementById('nav-toggle');
+	  if (toggle) {
+		toggle.addEventListener('click', ()=> {
+		  const links = document.querySelectorAll('.nav a');
+		  const expanded = toggle.getAttribute('aria-expanded') === 'true';
+		  toggle.setAttribute('aria-expanded', String(!expanded));
+		  links.forEach(a => { a.style.display = (!expanded) ? 'inline' : 'none'; });
+		});
+	  }
+
+	  renderGames();
+	});
+	</script>
+</body>
+</html>

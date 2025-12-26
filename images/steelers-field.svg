@@ -1,0 +1,44 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#157a2f"/>
+      <stop offset="100%" stop-color="#0f5f23"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="600" fill="url(#g)" />
+  <!-- subtle alternating stripes -->
+  <g fill="#0f6b2a" opacity="0.08">
+    <rect x="0" y="0" width="1600" height="600" />
+  </g>
+
+  <!-- Left endzone: Steelers gold with "Pittsburg" in black -->
+  <rect x="0" y="0" width="160" height="600" fill="#ffb612" />
+  <g transform="translate(80,300) rotate(-90)">
+    <text x="0" y="0" font-family="Verdana, Arial, sans-serif" font-size="48" font-weight="800" text-anchor="middle" fill="#000">Pittsburg</text>
+  </g>
+
+  <!-- Right endzone: black with "Steelers" in Steelers gold -->
+  <rect x="1440" y="0" width="160" height="600" fill="#0b0b0b" />
+  <g transform="translate(1520,300) rotate(90)">
+    <text x="0" y="0" font-family="Verdana, Arial, sans-serif" font-size="48" font-weight="800" text-anchor="middle" fill="#ffb612">Steelers</text>
+  </g>
+
+  <!-- yard lines (simplified) -->
+  <g stroke="#fff" stroke-width="3" opacity="0.9">
+    <line x1="800" y1="0" x2="800" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" stroke-opacity="0.8" stroke-width="2" />
+    <line x1="1000" y1="0" x2="1000" y2="600" stroke-opacity="0.8" stroke-width="2" />
+    <line x1="400" y1="0" x2="400" y2="600" stroke-opacity="0.6" stroke-width="1.5" />
+    <line x1="1200" y1="0" x2="1200" y2="600" stroke-opacity="0.6" stroke-width="1.5" />
+  </g>
+  <!-- hash-mark hints -->
+  <g stroke="#fff" stroke-width="2" stroke-opacity="0.9">
+    <line x1="760" y1="120" x2="760" y2="140" />
+    <line x1="840" y1="120" x2="840" y2="140" />
+  </g>
+  <!-- Center text, Steelers-style colors (no logo) -->
+  <text x="800" y="330" font-family="Verdana, Arial, sans-serif" font-size="72" font-weight="700" text-anchor="middle" fill="#ffb612" stroke="#000" stroke-width="6">STEELERS</text>
+  <!-- small subtext -->
+  <text x="800" y="370" font-family="Verdana, Arial, sans-serif" font-size="20" text-anchor="middle" fill="#fff" opacity="0.85">Fan Field</text>
+</svg>

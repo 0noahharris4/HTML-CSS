@@ -351,6 +351,7 @@
       line-height: 1.1;
       letter-spacing: -0.5px;
       margin-bottom: 1.4rem;
+      white-space: nowrap;
     }
     .hero-headline .accent { color: var(--gold); }
 
@@ -858,7 +859,7 @@
       .hero-bg { background-position: 60% center; }
       .hero-inner { padding: 2.5rem 0 3.5rem; max-width: 100%; }
       .hero-tag { font-size: 0.82rem; letter-spacing: 1.5px; }
-      .hero-headline { font-size: clamp(1.9rem, 9vw, 2.8rem); }
+      .hero-headline { font-size: clamp(1.9rem, 9vw, 2.8rem); white-space: normal; }
       .hero-sub { font-size: 0.92rem; max-width: 100%; }
       .hero-buttons { gap: 10px; }
       .btn-primary, .btn-ghost { padding: 12px 22px; font-size: 0.85rem; }
@@ -895,7 +896,7 @@
     }
 
     @media (max-width: 480px) {
-      .hero-headline { font-size: clamp(1.7rem, 10vw, 2.4rem); }
+      .hero-headline { font-size: clamp(1.7rem, 10vw, 2.4rem); white-space: normal; }
       .roster-grid { grid-template-columns: 1fr 1fr; }
       .section { padding: 3.5rem 0; }
     }
